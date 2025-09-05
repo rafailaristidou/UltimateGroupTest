@@ -1,0 +1,231 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\UltimateGroupTest\\tests\\SimpleInventory.Tests\\SimpleInventory.Tests.csproj": {}
+  },
+  "projects": {
+    "D:\\UltimateGroupTest\\src\\SimpleInventory.Data\\SimpleInventory.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UltimateGroupTest\\src\\SimpleInventory.Data\\SimpleInventory.Data.csproj",
+        "projectName": "SimpleInventory.Data",
+        "projectPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Data\\SimpleInventory.Data.csproj",
+        "packagesPath": "C:\\Users\\rafai\\.nuget\\packages\\",
+        "outputPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rafai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj": {
+                "projectPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj",
+        "projectName": "SimpleInventory.Domain",
+        "projectPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj",
+        "packagesPath": "C:\\Users\\rafai\\.nuget\\packages\\",
+        "outputPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rafai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UltimateGroupTest\\tests\\SimpleInventory.Tests\\SimpleInventory.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UltimateGroupTest\\tests\\SimpleInventory.Tests\\SimpleInventory.Tests.csproj",
+        "projectName": "SimpleInventory.Tests",
+        "projectPath": "D:\\UltimateGroupTest\\tests\\SimpleInventory.Tests\\SimpleInventory.Tests.csproj",
+        "packagesPath": "C:\\Users\\rafai\\.nuget\\packages\\",
+        "outputPath": "D:\\UltimateGroupTest\\tests\\SimpleInventory.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rafai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\UltimateGroupTest\\src\\SimpleInventory.Data\\SimpleInventory.Data.csproj": {
+                "projectPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Data\\SimpleInventory.Data.csproj"
+              },
+              "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj": {
+                "projectPath": "D:\\UltimateGroupTest\\src\\SimpleInventory.Domain\\SimpleInventory.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
