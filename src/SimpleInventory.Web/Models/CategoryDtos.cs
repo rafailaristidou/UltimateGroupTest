@@ -6,7 +6,6 @@ namespace SimpleInventory.Web.Models
     {
         [Required]
         public string Name { get; set; } = string.Empty;
-        //Add a list of products
     }
 
     public class CategoryReadDto
