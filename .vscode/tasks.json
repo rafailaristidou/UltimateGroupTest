@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run SimpleInventory.Web (Debug)",
+			"type": "shell",
+			"command": "dotnet run --project src/SimpleInventory.Web/SimpleInventory.Web.csproj --configuration Debug",
+			"isBackground": false,
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build"
+		}
+	]
+}

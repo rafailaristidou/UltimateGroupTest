@@ -1,0 +1,12 @@
+D:\UltimateGroupTest\src\SimpleInventory.Domain\bin\Debug\net8.0\SimpleInventory.Domain.deps.json
+D:\UltimateGroupTest\src\SimpleInventory.Domain\bin\Debug\net8.0\SimpleInventory.Domain.dll
+D:\UltimateGroupTest\src\SimpleInventory.Domain\bin\Debug\net8.0\SimpleInventory.Domain.pdb
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.AssemblyInfoInputs.cache
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.AssemblyInfo.cs
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.csproj.CoreCompileInputs.cache
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.sourcelink.json
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.dll
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\refint\SimpleInventory.Domain.dll
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\SimpleInventory.Domain.pdb
+D:\UltimateGroupTest\src\SimpleInventory.Domain\obj\Debug\net8.0\ref\SimpleInventory.Domain.dll
