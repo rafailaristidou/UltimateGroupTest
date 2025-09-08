@@ -64,8 +64,10 @@ namespace SimpleInventory.Web.Controllers
         }
 
         // POST: /Products/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+    [HttpPost]
+    [Microsoft.AspNetCore.Authorization.Authorize]
+    [ValidateAntiForgeryToken]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
         public async Task<IActionResult> Create(Product product)
         {
             if (await _db.Products.AnyAsync(p => p.Sku == product.Sku))
@@ -95,8 +97,10 @@ namespace SimpleInventory.Web.Controllers
         }
 
         // POST: /Products/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+    [HttpPost]
+    [Microsoft.AspNetCore.Authorization.Authorize]
+    [ValidateAntiForgeryToken]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
         public async Task<IActionResult> Edit(int id, Product product)
         {
             if (id != product.Id) return BadRequest();
@@ -116,6 +120,12 @@ namespace SimpleInventory.Web.Controllers
             {
                 var existing = await _db.Products.FirstOrDefaultAsync(p => p.Id == id);
                 if (existing == null) return NotFound();
+
+                // Optimistic concurrency: check UpdatedAt
+                if (product.UpdatedAt != existing.UpdatedAt)
+                {
+                    return StatusCode(StatusCodes.Status409Conflict, "Product was modified by another user.");
+                }
 
                 existing.Sku = product.Sku;
                 existing.Name = product.Name;
@@ -143,8 +153,10 @@ namespace SimpleInventory.Web.Controllers
         }
 
         // POST: /Products/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+    [HttpPost, ActionName("Delete")]
+    [Microsoft.AspNetCore.Authorization.Authorize]
+    [ValidateAntiForgeryToken]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var product = await _db.Products.FindAsync(id);

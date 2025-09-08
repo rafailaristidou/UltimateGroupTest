@@ -78,9 +78,10 @@ namespace SimpleInventory.Web.Controllers.Api
             return Ok(dto);
         }
 
-        // POST /api/products
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
+    // POST /api/products
+    [HttpPost]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
+    public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -105,9 +106,10 @@ namespace SimpleInventory.Web.Controllers.Api
             return CreatedAtAction(nameof(GetById), new { id = product.Id }, new { id = product.Id });
         }
 
-        // PUT /api/products/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
+    // PUT /api/products/{id}
+    [HttpPut("{id}")]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
+    public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -123,6 +125,12 @@ namespace SimpleInventory.Web.Controllers.Api
                 return ValidationProblem(ModelState);
             }
 
+            // Optimistic concurrency check
+            if (dto.UpdatedAt != product.UpdatedAt)
+            {
+                return Conflict(new { message = "Product has been updated by another user.", current = product.UpdatedAt });
+            }
+
             product.Sku = dto.Sku;
             product.Name = dto.Name;
             product.Price = dto.Price;
@@ -133,9 +141,10 @@ namespace SimpleInventory.Web.Controllers.Api
             return NoContent();
         }
 
-        // DELETE /api/products/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+    // DELETE /api/products/{id}
+    [HttpDelete("{id}")]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
+    public async Task<IActionResult> Delete(int id)
         {
             var product = await _db.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null) return NotFound();

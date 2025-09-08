@@ -41,7 +41,7 @@ public class ControllerTests
     [Fact]
     public async Task ProductCreationControllerRejectsDuplicateSku()
     {
-        var dbName = nameof(ProductCreation_ControllerRejectsDuplicateSku);
+        var dbName = nameof(ProductCreationControllerRejectsDuplicateSku);
         using var ctx = CreateInMemoryContext(dbName);
 
         // seed a category and a product with SKU DUP1
@@ -66,7 +66,7 @@ public class ControllerTests
     [Fact]
     public async Task ProductsControllerIndexFiltersByQueryAndCategory()
     {
-        var dbName = nameof(ProductsController_Index_FiltersByQueryAndCategory);
+        var dbName = nameof(ProductsControllerIndexFiltersByQueryAndCategory);
         using var ctx = CreateInMemoryContext(dbName);
 
         // seed categories
@@ -102,7 +102,7 @@ public class ControllerTests
     [Fact]
     public async Task CategoryDeletionPreventsWhenProductsExist()
     {
-        var dbName = nameof(CategoryDeletion_PreventsWhenProductsExist);
+        var dbName = nameof(CategoryDeletionPreventsWhenProductsExist);
         using var ctx = CreateInMemoryContext(dbName);
 
         var category = new Category { Id = 1, Name = "HasProducts" };

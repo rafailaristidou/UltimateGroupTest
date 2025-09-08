@@ -21,7 +21,11 @@ namespace SimpleInventory.Web.Models
         public int CategoryId { get; set; }
     }
 
-    public class ProductUpdateDto : ProductCreateDto { }
+    public class ProductUpdateDto : ProductCreateDto
+    {
+        // Client must send the current UpdatedAt value for optimistic concurrency checks
+        public DateTime UpdatedAt { get; set; }
+    }
 
     public class ProductReadDto
     {

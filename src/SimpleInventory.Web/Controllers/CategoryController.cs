@@ -32,6 +32,8 @@ namespace SimpleInventory.Web.Controllers
 
         // POST: /Categories/Create
         [HttpPost]
+        [Microsoft.AspNetCore.Authorization.Authorize]
+        [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
         {
@@ -58,9 +60,11 @@ namespace SimpleInventory.Web.Controllers
             return View(category);
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    [Microsoft.AspNetCore.Authorization.Authorize]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var category = await _db.Categories.Include(c => c.Products).FirstOrDefaultAsync(c => c.Id == id);
             if (category == null) return NotFound();

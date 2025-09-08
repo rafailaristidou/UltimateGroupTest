@@ -27,9 +27,10 @@ namespace SimpleInventory.Web.Controllers.Api
             return Ok(items);
         }
 
-        // POST /api/categories
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CategoryCreateDto dto)
+    // POST /api/categories
+    [HttpPost]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
+    public async Task<IActionResult> Create([FromBody] CategoryCreateDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -47,9 +48,10 @@ namespace SimpleInventory.Web.Controllers.Api
             return CreatedAtAction(nameof(Get), new { id = category.Id }, new { id = category.Id });
         }
 
-        // DELETE /api/categories/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+    // DELETE /api/categories/{id}
+    [HttpDelete("{id}")]
+    [Microsoft.AspNetCore.RateLimiting.EnableRateLimiting("WritePolicy")]
+    public async Task<IActionResult> Delete(int id)
         {
             var category = await _db.Categories.Include(c => c.Products).FirstOrDefaultAsync(c => c.Id == id);
             if (category == null) return NotFound();
